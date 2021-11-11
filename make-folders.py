@@ -8,4 +8,5 @@ for i, char in enumerate("Hello, World!"):
     os.chdir(str(i))
     for j in range(ord(char)):
         os.mkdir(str(j))
+    open("file", "w").close()
     os.chdir("..")
