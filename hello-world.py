@@ -1,15 +1,22 @@
+from random import randint
+import os
+
+os.chdir("message")
+
+lst = []
+for i in range(len(os.listdir())):
+    os.chdir(str(i))
+    lst.append([0] * len(os.listdir()))
+    os.chdir("..")
+
 message = ""
-message += chr(72)
-message += chr(101)
-message += chr(108)
-message += chr(108)
-message += chr(111)
-message += chr(44)
-message += chr(32)
-message += chr(87)
-message += chr(111)
-message += chr(114)
-message += chr(108)
-message += chr(100)
-message += chr(33)
-print(message)
+
+for l in lst:
+    x = 0
+    while x != len(l):
+        x = randint(0, 255)
+    
+    message += chr(x)
+
+os.system(f'echo {message}')
+
